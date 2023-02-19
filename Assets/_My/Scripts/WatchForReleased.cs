@@ -52,15 +52,40 @@ public class WatchForReleased : MonoBehaviour
             isHeld = true;
         if (!isHeld && wasHeld)
         {
-            effectsOnReleased.Invoke("StartTrail", 0);
-            motionVectorCalculator.Invoke("ApplyMotionToTransform", 0);
-            
-            objectTracker.Invoke("StartTracking", 0);
+            drawAxis3D.HideLine();
+            PhysicsTextHideAll();
+            effectsOnReleased.StartTrail();
+            motionVectorCalculator.ApplyMotionToTransform();            
+            objectTracker.StartTracking();
 
             waitingCollision = true;
             
         }
         wasHeld = isHeld;
+        bool thumb = OVRInput.Get(OVRInput.Button.PrimaryThumbstick, OVRInput.Controller.RTouch);
+        if (thumb)
+            Relaunch();
+    }
+
+    public void Relaunch()
+    {
+        transform.position = objectTracker.initialPosition;
+        drawAxis3D.HideLine();
+        PhysicsTextHideAll();
+        effectsOnReleased.StartTrail();
+        motionVectorCalculator.ReapplyMotionToTransform();
+        objectTracker.StartTracking();
+
+        waitingCollision = true;
+    }
+
+    public void PhysicsTextHideAll()
+    {
+        PhysicsText.TextShow(heightAboveOriginText, false);
+        PhysicsText.TextShow(launchSpeedText, false);
+        PhysicsText.TextShow(launchAngleText, false);
+        PhysicsText.TextShow(horizontalDistanceText, false);
+        PhysicsText.TextShow(heightBelowOriginText, false);
     }
 
     void OnCollisionEnter(Collision collision)
