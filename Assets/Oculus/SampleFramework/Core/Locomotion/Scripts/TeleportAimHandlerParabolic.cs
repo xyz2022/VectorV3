@@ -36,7 +36,7 @@ public class TeleportAimHandlerParabolic : TeleportAimHandler
 	public float Gravity = -9.8f;
 
 	/// <summary>
-	/// The AimVelocity is the initial speed of the faked projectile.
+	/// The AimVelocity is the initial launchSpeed of the faked projectile.
 	/// </summary>
 	[Tooltip("The AimVelocity is the initial speed of the faked projectile.")]
 	[Range(0.001f, 50.0f)]

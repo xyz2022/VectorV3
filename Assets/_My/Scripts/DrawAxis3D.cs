@@ -67,10 +67,36 @@ public class DrawAxis3D : MonoBehaviour
     {
         lineX.SetActive(true);
         lineY.SetActive(true);
+        Debug.Log("x 0 = " + lineRendererX.GetPosition(0).ToString());
+        Debug.Log("x 1 = " + lineRendererX.GetPosition(1).ToString());
+        Debug.Log("x 2 = " + lineRendererX.GetPosition(2).ToString());
+        Debug.Log("y 0 = " + lineRendererY.GetPosition(0).ToString());
+        Debug.Log("y 1 = " + lineRendererY.GetPosition(1).ToString());
+
     }
     public void HideLine()
     {
         lineX.SetActive(false);
         lineY.SetActive(false);
+    }
+
+    public float GetHorizontalDistance()
+    {
+        return (lineRendererX.GetPosition(1) - lineRendererY.GetPosition(0)).magnitude;
+        //return 0;
+    }
+    public float GetVerticalDistanceDown()
+    {
+        return (lineRendererX.GetPosition(1).y - lineRendererX.GetPosition(2).y);
+        //return 0;
+    }
+
+    public Vector3 GetVerticalDownPos()
+    {
+        return lineRendererX.GetPosition(2) + ((new Vector3(0, lineRendererX.GetPosition(1).y, 0) - new Vector3(0, lineRendererX.GetPosition(2).y, 0)) /2);
+    }
+    public Vector3 GetHorizontalFarPos()
+    {
+        return lineRendererX.GetPosition(1);
     }
 }

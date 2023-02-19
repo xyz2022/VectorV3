@@ -125,7 +125,7 @@ public class MoviePlayerSampleControls : MonoBehaviour
             case PlaybackState.Playing:
                 Player.SetPlaybackSpeed(1);
                 Player.Pause();
-                // Player's do not support negative speed. Instead, we need to seek step by step
+                // Player's do not support negative launchSpeed. Instead, we need to seek step by step
                 _rewindStartPosition = Player.PlaybackPosition;
                 _rewindStartTime = Time.time;
                 PlayPauseImage.buttonType = MediaPlayerImage.ButtonType.Play;

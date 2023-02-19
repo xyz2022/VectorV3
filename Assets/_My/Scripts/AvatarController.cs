@@ -35,6 +35,7 @@ public class AvatarController : MonoBehaviour
         transform.forward = Vector3.Lerp(transform.forward, Vector3.ProjectOnPlane(IKHead.forward, Vector3.up).normalized, Time.deltaTime * turnSmoothness); ;
         head.MapVRAvatar();
         leftHand.MapVRAvatar();
-        rightHand.MapVRAvatar();      
+        rightHand.MapVRAvatar();
+
     }
 }

@@ -5,13 +5,19 @@ using UnityEngine;
 
 public class PhysicsText : MonoBehaviour
 {
-    //public TextMeshPro heightAboveOrigin;
+    //public TextMeshPro heightAboveOriginText;
     
     private void Start()
     {
         
     }
 
+    public static void InitText(TextMeshPro tmpro, string text, bool show, int fontSize)
+    {
+        TextSet(tmpro, text);
+        TextShow(tmpro, show);
+        TextFontSize(tmpro, fontSize);
+    }
     public static void TextSet(TextMeshPro tmpro, string text)
     {
         tmpro.text = text;
