@@ -6547,6 +6547,7 @@ MonoBehaviour:
   transformForForward: {fileID: 7079690334010729355}
   walkSpeed: 20
   rotateSpeed: 80
+  xThreshold: 0.1
 --- !u!4 &256349832
 Transform:
   m_ObjectHideFlags: 0
@@ -25471,6 +25472,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: OVRHands
       objectReference: {fileID: 0}
+    - target: {fileID: 65207973030035947, guid: ea16c3c8c1688234fa81a4f39339bf1b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2258758052515309563, guid: ea16c3c8c1688234fa81a4f39339bf1b,
         type: 3}
       propertyPath: _trackingToWorldTransformer
@@ -30595,7 +30601,7 @@ MonoBehaviour:
     vrTarget: {fileID: 7084147297942037321}
     IKTarget: {fileID: 36009677}
     trackingPositionOffset: {x: 0.01, y: -0.05, z: -0.06}
-    trackingRotationOffset: {x: 95.66, y: 122.2, z: 284.9}
+    trackingRotationOffset: {x: 199.5, y: 165.3, z: 443.4}
   turnSmoothness: 0
   IKHead: {fileID: 99130545}
   headBodyOffset: {x: 0, y: -1.65, z: 0}
@@ -31357,7 +31363,7 @@ MonoBehaviour:
   _headPoseRelativeOffsetRotation: {x: 0, y: 0, z: 0}
   _headPoseRelativeOffsetTranslation: {x: 0, y: 0, z: 0}
   profilerTcpPort: 32419
-  expandMixedRealityCapturePropertySheet: 0
+  expandMixedRealityCapturePropertySheet: 1
   enableMixedReality: 0
   compositionMethod: 0
   extraHiddenLayers:
@@ -31724,6 +31730,7 @@ MonoBehaviour:
   transformForForward: {fileID: 7079690334010729355}
   walkSpeed: 4
   rotateSpeed: 80
+  xThreshold: 0.25
 --- !u!1 &7200213891981363470
 GameObject:
   m_ObjectHideFlags: 0
